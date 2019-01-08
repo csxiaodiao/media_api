@@ -19,13 +19,17 @@ require 'capistrano/rvm'
 # require 'capistrano/rbenv'
 # require 'capistrano/chruby'
 require 'capistrano/bundler'
-require 'capistrano/rails/assets'
+# require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 # require 'capistrano/passenger'
 
 #
 require 'capistrano/puma'
-require 'capistrano/puma/jungle'
+install_plugin Capistrano::Puma
+install_plugin Capistrano::Puma::Workers
+install_plugin Capistrano::Puma::Jungle
+install_plugin Capistrano::Puma::Nginx 
+# require 'capistrano/puma/jungle'
 # require 'capistrano/puma/monit'
 
 # 定时任务

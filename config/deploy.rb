@@ -5,25 +5,30 @@ set :repo_url, "git@github.com:csxiaodiao/media_api.git"
 
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
-set :deploy_to, "/var/apps/#{fetch(:application)}_#{fetch(:stage)}"
+set :deploy_to, "/app/#{fetch(:application)}_#{fetch(:stage)}"
 
 set :rails_env, 'production'
 
 set :pty, true
 
-append :linked_files, %w{
+set :linked_files, %w{
     config/database.yml
     config/master.key
     .versions.conf
 }
 
-append :linked_dirs, 'bin', "log", "tmp/pids", "tmp/cache", "tmp/sockets", 'public/system'
+set :linked_dirs, %w{
+    log 
+    tmp/pids 
+    tmp/cache 
+    tmp/sockets
+}
 
 set :keep_releases, 20
 
 set :ssh_options, {forward_agent: true}
 
-set :rvm_ruby_version, "2.5.3@#{fetch(:application)}_#{fetch(:stage)}"
+set :rvm_ruby_version, "2.5.1@#{fetch(:application)}_#{fetch(:stage)}"
 
 set :tmp_dir, '/tmp'
 
@@ -52,3 +57,5 @@ namespace :deploy do
       end
     end
 end
+
+
