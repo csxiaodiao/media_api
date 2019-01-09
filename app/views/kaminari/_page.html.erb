@@ -3,7 +3,8 @@
     <%= content_tag :a, page, data: { remote: remote }, rel: (page.next? ? 'next' : (page.prev? ? 'prev' : nil)) %>
   </li>
 <% else %>
+
   <li>
-    <%= link_to page, url, remote: remote, rel: (page.next? ? 'next' : (page.prev? ? 'prev' : nil)) %>
+    <%= link_to page, "#{request.base_url}#{url}", remote: remote, rel: (page.next? ? 'next' : (page.prev? ? 'prev' : nil)) %>
   </li>
 <% end %>
