@@ -4,4 +4,4 @@ json.total_pages @medium.total_pages
 json.current_page @medium.current_page 
 json.prev_page @medium.prev_page 
 json.next_page @medium.next_page 
-json.link render partial: 'link'
+json.page_link render partial: 'page_link'
