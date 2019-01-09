@@ -18,6 +18,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'ransack', '~> 2.1.1'
 gem 'kaminari'
+gem 'rack-cors', require: 'rack/cors'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
