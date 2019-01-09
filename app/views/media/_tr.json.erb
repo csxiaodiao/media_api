@@ -1,8 +1,8 @@
 <% items.each do |item|%>
 <tr> 
     <td class="td-press col-xs-2 col-sm-2 col-md-2"><span><a  target="_blank" href="<%= item.six_url%>"><%= item.name%></a></span></td> 
-    <td class="col-xs-1 col-sm-1 col-md-1"><span class="label label-danger"><%= item.real_price%></span> </td>
-    <td class="col-xs-1 col-sm-1 col-md-1"><span class="label label-danger"><%= item.price%></span> </td>
+    <td class="col-xs-1 col-sm-1 col-md-1"><%= item.real_price%> </td>
+    <td class="col-xs-1 col-sm-1 col-md-1"><%= item.price%> </td>
     <td class="col-xs-1 col-sm-1 col-md-1"><%= item.channel_type%></td>
     <td class="col-xs-2 col-sm-2 col-md-2"><%= item.collection_effect%></td>
     <td class="col-xs-5 col-sm-5 col-md-5"><div><p title="<%= item.remarks %>"><%= item.remarks %></p></div></td>
