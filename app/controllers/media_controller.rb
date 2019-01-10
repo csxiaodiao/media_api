@@ -1,6 +1,6 @@
 class MediaController < ApplicationController
   def search
     @q = Medium.ransack(params[:q])
-    @medium = Kaminari.paginate_array(@q.result, total_count: @q.result.count).page(params[:page]).per(50)
+    @medium = @q.result.page(params[:page]).per(50)    
   end
 end

@@ -1,7 +1,2 @@
-json.items render partial: 'tr', locals: {items: @medium.page}
-json.total_count @medium.total_count 
-json.total_pages @medium.total_pages 
-json.current_page @medium.current_page 
-json.prev_page @medium.prev_page 
-json.next_page @medium.next_page 
+json.items render partial: 'tr', locals: {items: @medium}
 json.page_link render partial: 'page_link'
